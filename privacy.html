@@ -27,7 +27,7 @@
       <h2>Stored information</h2>
       <p>The sender's OAuth client configuration and refresh token are stored in the operating system's credential store for the user running the kiosk: Windows Credential Manager, or macOS Keychain for developer testing. Tokens are not stored in the browser, the shared PDF folder, application logs, or the source repository.</p>
       <p>Each requested souvenir is associated with the visitor-provided recipient address and the matching PDF in a local archive. Delivery records store sending status, attempt counts, timestamps, safe error messages, and Google's message confirmation identifier. The kiosk retains archives and delivery records; it does not automatically delete them.</p>
-      <p>Souvenir PDFs and image-diagnostic sidecars are also copied to the configured office shared folder. The Gmail token and recipient records are not copied there.</p>
+      <p>Complete souvenir archive folders are also copied to the configured office shared folder, including PDFs, image diagnostics, recipient addresses, delivery records, and any other durable archive files. Shared recipient and delivery records are refreshed when the local records change. OAuth credentials, app-level settings, and temporary/copy-bookkeeping files are outside this shared archive copy. Deleting local files does not automatically remove existing shared copies.</p>
     </section>
     <section>
       <h2>Email delivery</h2>
