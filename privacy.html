@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How the MEPS Tour Display Gmail integration accesses, uses, stores, and shares information to send requested souvenir PDFs.">
+  <title>Gmail integration privacy notice · MEPS Tour Display</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <a class="brand" href="./">MEPS Tour Display</a>
+    <nav aria-label="Main navigation"><a href="./">About</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav>
+  </header>
+  <main id="main" class="document">
+    <p class="eyebrow">Privacy notice</p>
+    <h1>MEPS Tour Display Gmail integration</h1>
+    <p class="updated">Last updated: October 3, 2026</p>
+    <p>MEPS Tour Display uses Google's Gmail API to send souvenir PDFs requested at the tour kiosk. A guide authorizes the sender account; visitors do not authorize Google account access.</p>
+    <section>
+      <h2>Google account access</h2>
+      <p>The app requests permission to send email (<code>gmail.send</code>) and to verify the connected account's email identity (<code>openid email</code>). It checks that the account is <strong>meps.am.tour@gmail.com</strong>. It does not request permission to read the inbox, list existing messages, access contacts, or manage the account's mail settings.</p>
+      <p>Google account information is used to verify the designated sender and deliver requested souvenirs. Google user data is not used for advertising, sold, or used to train artificial-intelligence models. MEPS Tour Display's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+    </section>
+    <section>
+      <h2>Stored information</h2>
+      <p>The sender's OAuth client configuration and refresh token are stored in the operating system's credential store for the user running the kiosk: Windows Credential Manager, or macOS Keychain for developer testing. Tokens are not stored in the browser, the shared PDF folder, application logs, or the source repository.</p>
+      <p>Each requested souvenir is associated with the visitor-provided recipient address and the matching PDF in a local archive. Delivery records store sending status, attempt counts, timestamps, safe error messages, and Google's message confirmation identifier. The kiosk retains archives and delivery records; it does not automatically delete them.</p>
+      <p>Souvenir PDFs and image-diagnostic sidecars are also copied to the configured office shared folder. The Gmail token and recipient records are not copied there.</p>
+    </section>
+    <section>
+      <h2>Email delivery</h2>
+      <p>When delivery is enabled, the app transmits the recipient address, a short thank-you message, and the souvenir PDF to Google for sending. The PDF may include the visitor's tour content and souvenir picture. Google processes the email, and the recipient's email provider processes and stores the delivered message. Sent messages may remain in the sender's Gmail account according to that account's settings. The kiosk cannot guarantee delivery or inbox placement.</p>
+      <p>This notice describes the Gmail integration. The tour's picture-generation, printing, and local/shared souvenir storage also operate independently of Google account authorization.</p>
+    </section>
+    <section>
+      <h2>This information website</h2>
+      <p>This site is hosted by GitHub Pages. It has no email-entry form, analytics scripts, or application sign-in. GitHub logs visitors' IP addresses for security purposes. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> for the hosting provider's practices.</p>
+    </section>
+    <section>
+      <h2>Control and contact</h2>
+      <p>A guide can pause automatic delivery or disconnect the kiosk. Disconnecting removes that kiosk's saved refresh token; the guide can also revoke the app's Google authorization through the sender's Google Account connections settings. Pausing prevents future attempts; an email already in transmission may finish.</p>
+      <p>For questions about this integration or requests concerning a souvenir archive, contact <a href="mailto:meps.am.tour@gmail.com">meps.am.tour@gmail.com</a>. Removing a kiosk archive does not remove copies already sent to an email provider or previously copied to the shared folder; those copies must be addressed separately.</p>
+    </section>
+  </main>
+  <footer><span>MEPS Tour Display</span><span><a href="privacy.html">Privacy notice</a> · <a href="terms.html">Terms of use</a></span></footer>
+</body>
+</html>
